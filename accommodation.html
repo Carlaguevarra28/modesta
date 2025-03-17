@@ -307,6 +307,22 @@
                 modal.style.display = ''; // Reset display
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
     </script>
     
 </body>
