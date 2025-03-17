@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-poppins">
+
+    <!-- Navbar -->
+    <nav
+        class="sticky top-0 z-50 flex justify-between items-center px-4 md:px-12 py-3 bg-gradient-to-r from-blue-300 to-blue-200 shadow-md">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="assets/modesta.webp" class="h-12 w-12 rounded-full object-cover" alt="Resort Logo">
+            <h1 class="text-xl font-bold tracking-wide text-gray-800">
+                <span class="font-serif">Modesta</span>
+                <span class="text-black font-sans">Resort</span>
+            </h1>
+        </a>
+        <ul class="hidden md:flex space-x-8 text-gray-600 tracking-wide">
+            <li><a href="index.html" class="hover:text-blue-600 transition duration-300 text-lg">Home</a></li>
+            <li><a href="amenities.html" class="hover:text-blue-600 transition duration-300 text-lg">Amenities</a></li>
+            <li><a href="accommodation.html"
+                    class="hover:text-blue-600 transition duration-300 text-lg">Accommodation</a></li>
+            <li><a href="contact.html" class="hover:text-blue-600 transition duration-300 text-lg">Contact</a></li>
+            <li><a href="book.html" class="hover:text-blue-600 transition duration-300 text-lg">Book Now</a></li>
+        </ul>
+
+        <button type="button" id="menu-toggle" class="text-gray-800 md:hidden" aria-label="Toggle navigation menu">
+            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu"
+        class="hidden fixed top-16 right-5 w-60 bg-white/90 backdrop-blur-sm shadow-xl rounded-lg p-6 flex-col items-start space-y-4 text-black-600 text-lg transition-all duration-300 transform scale-95 z-[9999]">
+        <a href="index.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Home</a>
+        <a href="Accommodation.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Accommodation</a>
+        <a href="Amenities.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Amenities</a>
+        <a href="Contact.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Contact</a>
+        <a href="book.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Book</a>
+    </div>
+
+    <!-- ✅ Hero Section -->
+    <section
+        class="relative bg-cover bg-center h-[500px] flex flex-col items-center justify-center text-white text-center px-4"
+        style="background-image: url('assets/home.webp');">
+    
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+    
+        <!-- Content (Text) -->
+        <div class="relative z-10">
+            <h2 class="text-6xl font-bold">Welcome to Modesta Resort</h2>
+            <p class="mt-3 text-2xl">Experience tranquility and luxury in the heart of nature.</p>
+        </div>
+    </section>
+
+
+    <!-- ✅ Travel Destinations Section -->
+    <section class="relative px-6 py-12 mt-[-100px]">
+        <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Twin Cabin -->
+            <figure
+                class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6 relative z-10 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                <img class="w-full h-40 object-cover" src="assets/hero4.jpg" alt="Twin Cabin">
+                <figcaption class="text-lg font-semibold mt-3">TWIN CABIN</figcaption>
+                <p class="mt-2 text-gray-600 text-sm">A perfect blend of comfort and style, ideal for friends or solo
+                    travelers.</p>
+            </figure>
+    
+            <!-- Lazy Pool -->
+            <figure
+                class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6 relative z-10 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                <img class="w-full h-40 object-cover" src="assets/hero2.webp" alt="Lazy Pool">
+                <figcaption class="text-lg font-semibold mt-3">LAZY POOL</figcaption>
+                <p class="mt-2 text-gray-600 text-sm">Relax in gentle currents surrounded by tropical nature.</p>
+            </figure>
+    
+            <!-- Souvenir Shop -->
+            <figure
+                class="bg-white shadow-lg rounded-lg overflow-hidden text-center p-6 relative z-10 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
+                <img class="w-full h-40 object-cover" src="assets/hero3.webp" alt="Souvenir Shop">
+                <figcaption class="text-lg font-semibold mt-3">SOUVENIR SHOP</figcaption>
+                <p class="mt-2 text-gray-600 text-sm">Take home exclusive souvenirs reflecting Modesta Resort's beauty.</p>
+            </figure>
+        </div>
+    </section>
+
+
+    <!-- ✅ Footer -->
+    <footer class="mt-16 bg-gray-800 text-white text-center py-6">
+        <h2 class="text-2xl font-bold">Modesta Resort</h2>
+        <p class="max-w-xl mx-auto mt-4 text-gray-400">
+            Modesta Resort, located in Irosin, Sorsogon, Philippines, offers guests a serene retreat with amenities such
+            as cabin villas, a 70-meter-long pool, and a fully furnished kitchen. Its Bali-inspired design provides a tranquil
+            escape for travelers seeking relaxation.
+        </p>
+
+        <div class="mt-6 border-t border-gray-700 py-4">
+            <p class="mb-2 md:mb-0">© 2025 Modesta Resort. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Sitemap</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Terms of Service</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Blog</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = document.getElementById('close-menu');
+
+            // Toggle menu visibility
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent immediate closing when clicked
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu button
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Close menu when clicking outside of it
+            document.addEventListener('click', (event) => {
+                if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Ensure the menu closes on window resize for larger screens
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

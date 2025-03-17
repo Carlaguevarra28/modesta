@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-poppins">
+
+<nav
+    class="sticky top-0 z-50 flex justify-between items-center px-4 md:px-12 py-3 bg-gradient-to-r from-blue-300 to-blue-200 shadow-md">
+    <a href="index.html" class="flex items-center space-x-3">
+        <img src="assets/modesta.webp" class="h-12 w-12 rounded-full object-cover" alt="Resort Logo">
+        <h1 class="text-xl font-bold tracking-wide text-gray-800">
+            <span class="font-serif">Modesta</span>
+            <span class="text-black font-sans">Resort</span>
+        </h1>
+    </a>
+    <ul class="hidden md:flex space-x-8 text-gray-600 tracking-wide">
+        <li><a href="index.html" class="hover:text-blue-600 transition duration-300 text-lg">Home</a></li>
+        <li><a href="amenities.html" class="hover:text-blue-600 transition duration-300 text-lg">Amenities</a></li>
+        <li><a href="accommodation.html" class="hover:text-blue-600 transition duration-300 text-lg">Accommodation</a>
+        </li>
+        <li><a href="contact.html" class="hover:text-blue-600 transition duration-300 text-lg">Contact</a></li>
+        <li><a href="book.html" class="hover:text-blue-600 transition duration-300 text-lg">Book Now</a></li>
+    </ul>
+
+    <button id="menu-toggle" class="text-gray-800 md:hidden" aria-label="Toggle navigation menu">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+</nav>
+
+
+    <div id="mobile-menu"
+        class="hidden fixed top-16 right-5 w-60 bg-white/90 backdrop-blur-sm shadow-xl rounded-lg p-6 flex-col items-start space-y-4 text-black-600 text-lg transition-all duration-300 transform scale-95 z-[9999]">
+        <a href="index.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Home</a>
+        <a href="Accommodation.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Accommodation</a>
+        <a href="Amenities.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Amenities</a>
+        <a href="Contact.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Contact</a>
+        <a href="book.html"
+            class="block w-full text-left px-4 py-2 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition">Book Now</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Our Accommodations</h1>
+        <div class="flex flex-wrap gap-4 mb-6 justify-center">
+        
+
+        <!-- Room Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Room Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl cursor-pointer"
+                onclick="document.getElementById('modal1').classList.remove('hidden')">
+                <img src="assets/cabin 1 villas.webp" alt="Farm Villas"
+                    class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Farm Villas</h3>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Available</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">Experience serene countryside living in our luxurious farm villas, where modern comfort meets nature’s beauty.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-gray-900">5,000/night</span>
+                       
+                        <button type="button" onclick="openModal('modal1')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl cursor-pointer"
+                onclick="document.getElementById('modal2').classList.remove('hidden')">
+                <img src="assets/couple room.webp" alt="Cabin 1 Villas "
+                    class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Cabin 1 Villas</h3>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Last Few</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">Discover tranquility at Cabin 1 Villas, where cozy elegance and scenic beauty create the ultimate getaway.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-gray-900">6,000/night</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl cursor-pointer"
+                onclick="document.getElementById('modal3').classList.remove('hidden')">
+                <img src="assets/cabin 3 villas.webp" alt="Cabin 3 Villas"
+                    class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Cavin 3 villas</h3>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Booked</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">Retreat to Cabin 3 Villas, where rustic charm and contemporary comfort create a peaceful getaway.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-gray-900">10,000/night</span>
+                        <button type="button" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal1" class="hidden fixed inset-0 bg-black/40 bg-opacity-50 z-50 p-4 items-center justify-center">
+        <div
+            class="bg-white rounded-xl w-full max-w-2xl mx-auto overflow-hidden backdrop-blur-sm p-6 relative max-h-[100vh] overflow-y-auto">
+            <div>
+                <img src="assets/cabin 1 villas.webp" alt="Farm Villas" class="w-full h-64 md:h-80 object-cover">
+                <button type="button" aria-label="Close Modal" onclick="closeModal('modal1')"
+                    class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Farm Villa</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Amenities</h3>
+                        <ul class="space-y-2">
+                            <li>Private Pool</li>
+                            <li>Full Kitchen</li>
+                            <li>WiFi</li>
+                            <li>Airconditioned Rooms</li>
+                            <li>Hot & Cold Shower</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Pricing</h3>
+                        <div class="space-y-2">
+                            <p>Weekday: 4,00/night</p>
+                            <p>Weekend: 7,000/night</p>
+                            <p>Extended Stay: 8,000/night</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='book.html'"
+                            class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal2" class="hidden fixed inset-0 bg-black/40 bg-opacity-50 z-50 p-4 items-center justify-center">
+        <div
+            class="bg-white rounded-xl w-full max-w-2xl mx-auto overflow-hidden backdrop-blur-sm p-6 relative max-h-[99vh] overflow-y-auto">
+            <div>
+                <img src="assets/couple room.webp" alt="Farm Villas" class="w-full h-64 md:h-80 object-cover">
+                <button type="button" aria-label="Close Modal" onclick="closeModal('modal2')"
+                    class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Farm Villa</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Amenities</h3>
+                        <ul class="space-y-2">
+                            <li>Private Pool</li>
+                            <li>Full Kitchen</li>
+                            <li>WiFi</li>
+                            <li>Airconditioned Rooms</li>
+                            <li>Hot & Cold Shower</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Pricing</h3>
+                        <div class="space-y-2">
+                            <p>Weekday: 4,999/night</p>
+                            <p>Weekend: 6,000/night</p>
+                            <p>Extended Stay: 10,000/night</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='book.html'"
+                            class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal3" class="hidden fixed inset-0 bg-black/40 bg-opacity-50 z-50 p-4 items-center justify-center">
+        <div
+            class="bg-white rounded-xl w-full max-w-2xl mx-auto overflow-hidden backdrop-blur-sm p-6 relative max-h-[99vh] overflow-y-auto">
+            <div>
+                <img src="assets/cabin 3 villas.webp" alt="Farm Villas" class="w-full h-64 md:h-80 object-cover">
+                <button type="button" aria-label="Close Modal" onclick="closeModal('modal3')"
+                    class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Farm Villa</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Amenities</h3>
+                        <ul class="space-y-2">
+                            <li>Private Pool</li>
+                            <li>Full Kitchen</li>
+                            <li>WiFi</li>
+                            <li>Airconditioned Rooms</li>
+                            <li>Hot & Cold Shower</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg md:text-xl font-semibold mb-4">Pricing</h3>
+                        <div class="space-y-2">
+                            <p>Weekday: 6,000/night</p>
+                            <p>Weekend: 8,000/night</p>
+                            <p>Extended Stay: 12,000/night</p>
+                        </div>
+                        <button type="button" onclick="window.location.href='book.html'"
+                            class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 w-full">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<!-- ✅ Footer -->
+<footer class="mt-16 bg-gray-800 text-white text-center py-6">
+
+    <body class="bg-black text-white">
+        <h2 class="text-2xl font-bold">Modesta Resort</h2>
+        <p class="max-w-xl mx-auto mt-4 text-gray-400">
+            Modesta Resort, located in Irosin, Sorsogon, Philippines, offers guests a serene retreat with amenities such
+            as cabin
+            villas, a 70-meter-long pool, and a fully furnished kitchen. Its Bali-inspired design provides a tranquil
+            escape for
+            travelers seeking relaxation.
+        </p>
+        <div class="mt-6 border-t border-gray-700 py-4">
+            <p class="mb-2 md:mb-0">© 2025 Modesta Resort. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Privacy Policy</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Sitemap</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Terms of Service</a>
+                <a href="#" class="text-gray-400 mx-3 hover:text-white">Blog</a>
+            </div>
+        </div>
+</footer>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</footer>
+
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex'; // Apply flex dynamically
+                modal.style.alignItems = 'center';
+                modal.style.justifyContent = 'center';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = ''; // Reset display
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
